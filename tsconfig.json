@@ -6,7 +6,8 @@
     "outDir": "./out",
     "esModuleInterop": true,
     "baseUrl": "./",
-    "sourceMap": true
+    "sourceMap": true,
+    "declaration": true
   },
   "include": [
     "./src"
