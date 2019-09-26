@@ -11,9 +11,25 @@
     "type": "git",
     "url": "git+https://github.com/ocpu/terminal-renderer.git"
   },
-  "keywords": [],
+  "keywords": [
+    "terminal",
+    "term",
+    "console",
+    "command-line",
+    "commandline",
+    "renderer",
+    "loading",
+    "progress",
+    "progressbar",
+    "spinners",
+    "spinner",
+    "updater",
+    "ansi",
+    "cli",
+    "tty"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ocpu/terminal-renderer/issues"
   },
