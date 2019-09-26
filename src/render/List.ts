@@ -8,6 +8,14 @@ export interface Keyed {
   key: string | number
 }
 
+function fromEntries(entries: [string | number, any][]): { [key: string]: any } {
+  const res: { [key: string]: any } = {}
+  entries.forEach(item => {
+    res[item[0]] = item[1]
+  })
+  return res
+}
+
 export class List<T extends Keyed> extends Updater implements IRender, IScheduler {
   private static defaultListItemResolver: ListItemResolver<any> = (item: any) =>
     <IRender>{
@@ -78,7 +86,7 @@ export class List<T extends Keyed> extends Updater implements IRender, ISchedule
   constructor(list: T[], listItemResolver: ListItemResolver<T>)
   constructor(private list: T[], private listItemResolver: ListItemResolver<T> = List.defaultListItemResolver) {
     super()
-    this.keys = Object.fromEntries(
+    this.keys = fromEntries(
       list.map(it => {
         const listItem = listItemResolver(it)
         if (
