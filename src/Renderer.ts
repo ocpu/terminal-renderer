@@ -1,5 +1,5 @@
 import { IRender } from './render'
-import { IScheduler } from './sheduler'
+import { IScheduler } from './scheduler'
 import { Cursor, RenderGroup } from './'
 
 export class Renderer {

@@ -1,5 +1,5 @@
 import { IRender } from '.'
-import { IScheduler, Updater } from '../sheduler'
+import { IScheduler, Updater } from '../scheduler'
 import { Cursor } from '..'
 
 export type ListItemResolver<T> = (item: T) => IRender | IRender & IScheduler

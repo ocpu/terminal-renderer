@@ -1,5 +1,5 @@
 export * from './render'
-export * from './sheduler'
+export * from './scheduler'
 export * from './Cursor'
 export * from './Renderer'
 export * from './RenderGroup'

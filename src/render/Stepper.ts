@@ -1,5 +1,5 @@
 import { IRender } from './IRender'
-import { Updater, IScheduler } from '../sheduler'
+import { Updater, IScheduler } from '../scheduler'
 import { Cursor } from '../Cursor'
 
 export class Stepper extends Updater implements IRender, IScheduler {

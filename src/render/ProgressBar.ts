@@ -1,5 +1,5 @@
 import { IRender } from '.'
-import { IScheduler, Updater } from '../sheduler'
+import { IScheduler, Updater } from '../scheduler'
 import { Cursor } from '..'
 
 type ProgressBarOptions = { pattern: string; emptyPattern: string; length: number; prefix: string; suffix: string }

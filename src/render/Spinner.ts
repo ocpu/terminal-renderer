@@ -1,5 +1,5 @@
 import { IRender } from '.'
-import { IScheduler, Interval } from '../sheduler'
+import { IScheduler, Interval } from '../scheduler'
 import { Cursor } from '..'
 
 export class Spinner extends Interval implements IRender, IScheduler {
