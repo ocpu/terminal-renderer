@@ -20,7 +20,10 @@ export class List<T extends Keyed> extends Updater implements IRender, ISchedule
   private static defaultListItemResolver: ListItemResolver<any> = (item: any) =>
     <IRender>{
       render(cursor: Cursor) {
-        cursor.text(item)
+        if (typeof item.render === 'function' && item.render.length === 1)
+          item.render(cursor)
+        else
+          cursor.text(item)
       }
     }
   private window_size: number = this.list.length
