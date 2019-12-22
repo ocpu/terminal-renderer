@@ -34,6 +34,19 @@ export class Renderer {
     this.root.addAll(...items)
   }
 
+  remove(scheduler: IScheduler): void
+  remove(renderer: IRender): void
+  remove(item: IRender & IScheduler): void
+  remove(item: IRender | IScheduler | IRender & IScheduler): void {
+    //@ts-ignore
+    this.root.remove(item)
+  }
+
+  removeAll(...items: (IRender | IScheduler | IRender & IScheduler)[]): void {
+    //@ts-ignore
+    this.root.removeAll(...items)
+  }
+
   start() {
     this.root.start()
     this.root.render(this._cursor)

@@ -59,4 +59,29 @@ export class RenderGroup implements IRender, IScheduler {
       this.add(item)
     }
   }
+
+  remove(scheduler: IScheduler): void
+  remove(renderer: IRender): void
+  remove(item: IRender & IScheduler): void
+  remove(item: IRender | IScheduler | IRender & IScheduler): void {
+    scheduler: {
+      const index = this.schedulers.indexOf(item as IScheduler)
+      if (index === -1)
+        break scheduler
+      this.schedulers.splice(index, 1)
+    }
+    renderer: {
+      const index = this.renderers.indexOf(item as IRender)
+      if (index === -1)
+        break renderer
+      this.renderers.splice(index, 1)
+    }
+  }
+
+  removeAll(...items: (IRender | IScheduler | IRender & IScheduler)[]): void {
+    for (const item of items) {
+      //@ts-ignore
+      this.remove(item)
+    }
+  }
 }
