@@ -1,7 +1,7 @@
 {
   "name": "terminal-renderer",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.1.1",
+  "description": "A component based terminal renderer",
   "main": "out/index.js",
   "types": "out/index.d.ts",
   "scripts": {
@@ -29,11 +29,13 @@
     "spinners",
     "spinner",
     "updater",
+    "list",
+    "group",
     "ansi",
     "cli",
     "tty"
   ],
-  "author": "",
+  "author": "Martin Hövre <martin.hovre@opencubes.io>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ocpu/terminal-renderer/issues"
