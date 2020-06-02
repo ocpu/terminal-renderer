@@ -26,6 +26,7 @@ export class List<T extends Keyed> extends Updater implements IRender, ISchedule
           cursor.text(item)
       }
     }
+  private has_set_window_size: boolean = false
   private window_size: number = this.list.length
   private top_index: number = 0
   //@ts-ignore Key should be either a number or string
@@ -37,7 +38,11 @@ export class List<T extends Keyed> extends Updater implements IRender, ISchedule
       if (typeof res === 'function') {
         const _this = this
         return function proxy(...args: any[]) {
+          const preModLength = target.length
           res.apply(target, args)
+          if (!_this.has_set_window_size && target.length !== preModLength) {
+            _this.window_size = target.length
+          }
           _this.postListUpdate()
         }
       }
