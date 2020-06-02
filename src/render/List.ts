@@ -37,7 +37,7 @@ export class List<T extends Keyed> extends Updater implements IRender, ISchedule
       if (typeof res === 'function') {
         const _this = this
         return function proxy(...args: any[]) {
-          res(...args)
+          res.apply(target, args)
           _this.postListUpdate()
         }
       }
@@ -68,6 +68,7 @@ export class List<T extends Keyed> extends Updater implements IRender, ISchedule
     }
   })
   set windowSize(value: number) {
+    this.has_set_window_size = true
     this.window_size = value
     this.update()
   }
