@@ -35,7 +35,7 @@ export class List<T extends Keyed> extends Updater implements IRender, ISchedule
     get: (target, key) => {
       //@ts-ignore
       const res = target[key]
-      if (typeof res === 'function') {
+      if (typeof key !== 'symbol' && isNaN(parseInt(key as string)) && typeof target[key as any] === 'function') {
         const _this = this
         return function proxy(...args: any[]) {
           const preModLength = target.length
